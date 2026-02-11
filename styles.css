@@ -459,16 +459,6 @@ dd {
     font-size: 11.5px;
   }
 
-  .contact-icon {
-    width: 14px;
-    height: 14px;
-  }
-
-  .contact-icon svg {
-    width: 10px;
-    height: 10px;
-  }
-
   .qr-box {
     padding: 8px;
     gap: 8px;
@@ -481,6 +471,16 @@ dd {
 
   .qr-box p {
     font-size: 12px;
+  }
+
+  .contact-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .contact-icon svg {
+    width: 10px;
+    height: 10px;
   }
 
   .content-grid {
