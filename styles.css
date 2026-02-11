@@ -1,0 +1,374 @@
+:root {
+  --paper: #fffdf9;
+  --ink: #1f2024;
+  --muted: #5c5e66;
+  --accent: #0d6e6e;
+  --accent-soft: #d8efed;
+  --line: #d6d3cb;
+  --bg: #f3efe6;
+  --print-scale: 1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: "Work Sans", "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at 12% 8%, #ffe7cd 0%, #f3efe6 40%),
+    radial-gradient(circle at 88% 92%, #d9ecf2 0%, #f3efe6 42%),
+    var(--bg);
+}
+
+.bg-shape {
+  position: fixed;
+  z-index: 0;
+  pointer-events: none;
+  filter: blur(2px);
+}
+
+.bg-shape-a {
+  width: 280px;
+  height: 280px;
+  top: -80px;
+  left: -70px;
+  background: linear-gradient(135deg, #ffd6ad, #ffb88d);
+  border-radius: 42% 58% 66% 34% / 47% 32% 68% 53%;
+  opacity: 0.42;
+}
+
+.bg-shape-b {
+  width: 360px;
+  height: 360px;
+  right: -130px;
+  bottom: -130px;
+  background: linear-gradient(135deg, #9ad4df, #80b2cc);
+  border-radius: 64% 36% 44% 56% / 38% 58% 42% 62%;
+  opacity: 0.36;
+}
+
+.page-wrap {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 1200px);
+  margin: 0 auto;
+  padding: 28px 16px;
+}
+
+.print-btn {
+  border: 0;
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font: 600 14px/1 "Work Sans", sans-serif;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  margin: 0 0 14px auto;
+  display: block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.print-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 16px rgba(13, 110, 110, 0.25);
+}
+
+.biodata-sheet {
+  width: min(210mm, 100%);
+  min-height: 297mm;
+  margin: 0 auto;
+  background: linear-gradient(160deg, #fffdf9, #fffaf3 45%, #fffdf9);
+  border: 1px solid var(--line);
+  box-shadow: 0 20px 45px rgba(31, 32, 36, 0.15);
+  padding: 24px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 120px;
+  gap: 16px;
+  align-items: start;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 14px;
+}
+
+.hero-main {
+  max-width: 100%;
+}
+
+.photo-slot {
+  position: relative;
+  width: 110px;
+  height: 130px;
+  border: 1.5px solid #9ac5c0;
+  border-radius: 12px;
+  background: #eef6f5;
+  overflow: hidden;
+}
+
+.photo-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-fallback {
+  position: absolute;
+  inset: 0;
+  display: none;
+  place-items: center;
+  color: var(--muted);
+  font-size: 13px;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(216, 239, 237, 0.6),
+    rgba(216, 239, 237, 0.6) 8px,
+    rgba(255, 253, 249, 0.9) 8px,
+    rgba(255, 253, 249, 0.9) 16px
+  );
+}
+
+.kicker {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 11px;
+}
+
+h1 {
+  margin: 6px 0;
+  font: 700 clamp(30px, 4vw, 44px)/1.05 "Cormorant Garamond", Georgia, serif;
+}
+
+.tagline {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.contact-strip {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.contact-strip span {
+  background: var(--accent-soft);
+  border: 1px solid #bddbd7;
+  color: #184848;
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+.contact-strip a {
+  color: #184848;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact-strip a:hover {
+  text-decoration: underline;
+}
+
+.content-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.panel {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.panel-wide {
+  grid-column: 1 / -1;
+}
+
+.panel h2 {
+  margin: 0 0 12px;
+  font: 700 24px/1.1 "Cormorant Garamond", Georgia, serif;
+  color: #173f3f;
+}
+
+.panel h3 {
+  margin: 12px 0 8px;
+  color: #294646;
+  font: 600 16px/1.2 "Work Sans", sans-serif;
+}
+
+.data-list {
+  margin: 0;
+}
+
+.data-list div {
+  display: grid;
+  grid-template-columns: 38% 62%;
+  gap: 8px;
+  border-bottom: 1px dashed #d9d7d0;
+  padding: 7px 0;
+}
+
+dt {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+dd {
+  margin: 0;
+  font-weight: 500;
+}
+
+.simple-list {
+  margin: 0;
+  padding: 0 0 0 18px;
+  color: #2d2f36;
+}
+
+.simple-list li {
+  margin: 0 0 8px;
+  line-height: 1.4;
+}
+
+.sheet-footer {
+  margin-top: 16px;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+  color: #3b3d45;
+  font-size: 14px;
+}
+
+.sheet-footer p {
+  margin: 0 0 10px;
+}
+
+.sheet-footer div {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.reveal {
+  animation: rise 0.6s ease both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .panel-wide {
+    grid-column: auto;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .contact-strip {
+    justify-content: center;
+  }
+
+  .data-list div {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  html,
+  body {
+    width: 210mm;
+    height: auto;
+  }
+
+  body {
+    margin: 0;
+    background:
+      radial-gradient(circle at 12% 8%, #ffe7cd 0%, #f3efe6 40%),
+      radial-gradient(circle at 88% 92%, #d9ecf2 0%, #f3efe6 42%),
+      var(--bg);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .page-wrap {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .biodata-sheet {
+    width: 198mm;
+    min-height: auto;
+    border: 1px solid var(--line);
+    box-shadow: none;
+    margin: 0 auto;
+    padding: 16px;
+    zoom: var(--print-scale);
+  }
+
+  .panel {
+    break-inside: avoid;
+  }
+
+  /* Force desktop layout in PDF so mobile breakpoint does not apply. */
+  .hero {
+    grid-template-columns: 1fr 120px !important;
+    justify-items: stretch !important;
+    text-align: left !important;
+  }
+
+  .content-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .panel-wide {
+    grid-column: 1 / -1 !important;
+  }
+
+  .contact-strip {
+    justify-content: flex-start !important;
+  }
+
+  .data-list div {
+    grid-template-columns: 38% 62% !important;
+    gap: 8px !important;
+  }
+}
