@@ -308,6 +308,30 @@ dd {
   line-height: 1.4;
 }
 
+.spouse-item {
+  list-style: none;
+  margin-left: -18px;
+  padding: 6px 10px;
+  border: 1px dashed #bddbd7;
+  border-radius: 8px;
+  background: #f1f9f8;
+}
+
+.spouse-icon {
+  display: inline-flex;
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  vertical-align: text-bottom;
+}
+
+.spouse-icon svg {
+  width: 16px;
+  height: 16px;
+  fill: #0d6e6e;
+  display: block;
+}
+
 .reveal {
   animation: rise 0.6s ease both;
 }
@@ -482,6 +506,17 @@ dd {
   .simple-list li {
     margin: 0 0 6px;
     line-height: 1.32;
+  }
+
+  .spouse-item {
+    margin-left: -16px;
+    padding: 5px 8px;
+  }
+
+  .spouse-icon,
+  .spouse-icon svg {
+    width: 14px;
+    height: 14px;
   }
 
   /* Force desktop layout in PDF so mobile breakpoint does not apply. */
