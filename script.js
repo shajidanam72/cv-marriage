@@ -4,7 +4,7 @@ const photoFallback = document.getElementById("photoFallback");
 const rootEl = document.documentElement;
 const sheetEl = document.querySelector(".biodata-sheet");
 
-const A4_SAFE_HEIGHT_MM = 270;
+const A4_SAFE_HEIGHT_MM = 300;
 const PX_PER_MM = 96 / 25.4;
 
 function setPrintScale() {
