@@ -161,13 +161,33 @@ h1 {
   gap: 8px;
 }
 
-.contact-strip span {
+.contact-strip > .contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   background: var(--accent-soft);
   border: 1px solid #bddbd7;
   color: #184848;
   border-radius: 999px;
   padding: 5px 10px;
   font-size: 12px;
+}
+
+.contact-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #d9ece9;
+}
+
+.contact-icon svg {
+  width: 12px;
+  height: 12px;
+  fill: #184848;
+  display: block;
 }
 
 .contact-strip a {
@@ -410,9 +430,19 @@ dd {
     gap: 6px;
   }
 
-  .contact-strip span {
+  .contact-strip > .contact-item {
     padding: 4px 9px;
     font-size: 11.5px;
+  }
+
+  .contact-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .contact-icon svg {
+    width: 10px;
+    height: 10px;
   }
 
   .qr-box {
